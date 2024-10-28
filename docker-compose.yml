@@ -1,10 +1,12 @@
 services:
-  nestjs-optimize-pg-db:
-    image: postgres:16.4
+  nestjs-optimize-mssql-db-2:
+    image: mcr.microsoft.com/mssql/server:2022-latest
     restart: always
     ports:
-      - 5439:5432
+      - 1499:1433
     environment:
-      POSTGRES_USER: some-user
-      POSTGRES_PASSWORD: non-important-pg-password
-      POSTGRES_DB: dev
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "c0mpLex-5eCreT-paword"
+      MSSQL_PID: "Express"  # Optional: Specifies the SQL Server edition
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mounts the init script
