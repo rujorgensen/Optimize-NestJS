@@ -27,6 +27,7 @@ export class AppController {
     @Query('searchString') searchString?: string,
     @Query('orderBy') orderBy?: 'asc' | 'desc',
   ): Promise<PostModel[]> {
+    console.log(`Hit /feed`);
     const or = searchString
       ? {
           OR: [
