@@ -5,11 +5,11 @@
 
 ```bash
 OPTIMIZE_API_KEY=<YOUR_API_KEY>
-DATABASE_URL=postgres://some-user:non-important-pg-password@localhost:5439/dev?schema=public
+DATABASE_URL=sqlserver://localhost:1499;database=dev;user=sa;password=c0mpLex-5eCreT-paword;encrypt=true;trustServerCertificate=true
 ```
 
 - Install Dependencies: `npm install`
-- Start dev PostgreSQL-server by running `docker compose -f "docker-compose.yml" up -d --build`
+- Start dev mssql-server by running `docker compose -f "docker-compose.yml" up -d --build`
 - Run: `npx prisma migrate dev --name init`
 - Start Recording in the Optimize Dashboard
 - Run: `npm run dev` to start the API Server
